@@ -6,7 +6,10 @@
 	.text
 	.align  2
 	.global fibonacci
-	.type   fibonacci, %function  
+	.type   fibonacci, %function
+    .global main
+    .type   main, %function
+main:  
 
 fibonacci:                  @ int fibonacci(int num) {
 	str     fp, [sp, -4]!   @   // save caller frame pointer
