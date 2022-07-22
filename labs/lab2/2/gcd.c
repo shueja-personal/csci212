@@ -1,6 +1,6 @@
 #include "gcd.h"
 
-int gcd(int a, int b) {
+int gcde(int a, int b) {
 
 	while(a != 0) {
 		if (a - b < 0) {

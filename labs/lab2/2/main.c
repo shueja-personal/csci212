@@ -4,25 +4,25 @@
 //gcc -I. main.c fib.c Fibonacci.s; ./a.out
 
 int main() {
-	// int a = 0;
-	// int b = 0;
-	// printf("Enter first positive integer:\n");
-	// scanf("%d", &a);
-	// printf("Enter second positive integer:\n");
-	// scanf("%d", &b);
-	// printf("the gcd is %d\n", gcd(a, b));
-	int n=4;
-	int m=3;
-	int l=1;
-	printf("%d gcd %d = %d, expected %d, equal: %i\n", n, m, gcd(n, m), l, gcd(n,m)==l);
-	n=60;
-	m=44;
-	l=4;
-	printf("%d gcd %d = %d, expected %d, equal: %i\n", n, m, gcd(n, m), l, gcd(n,m)==l);
-	n=25;
-	m=5;
-	l=5;
-	printf("%d gcd %d = %d, expected %d, equal: %i\n", n, m, gcd(n, m), l, gcd(n,m)==l);
+	int a = 0;
+	int b = 0;
+	printf("Enter first positive integer:\n");
+	scanf("%d", &a);
+	printf("Enter second positive integer:\n");
+	scanf("%d", &b);
+	printf("the gcd is %d\n", gcd(a, b));
+	// int n=4;
+	// int m=3;
+	// int l=1;
+	// printf("%d gcd %d = %d, expected %d, equal: %i\n", n, m, gcd(n, m), l, gcd(n,m)==l);
+	// n=60;
+	// m=44;
+	// l=4;
+	// printf("%d gcd %d = %d, expected %d, equal: %i\n", n, m, gcd(n, m), l, gcd(n,m)==l);
+	// n=25;
+	// m=5;
+	// l=5;
+	// printf("%d gcd %d = %d, expected %d, equal: %i\n", n, m, gcd(n, m), l, gcd(n,m)==l);
 	// n=0;
 	// m=0;	
 	// printf("the %dth Fibonacci number is %d, expected %d, equal: %i\n", n, fibonacci(n), m, fibonacci(n)==m);
