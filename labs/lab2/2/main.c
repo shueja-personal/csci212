@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "gcd.h"
 
-//gcc -I. main.c fib.c Fibonacci.s; ./a.out
 
 int main() {
 	int a = 0;

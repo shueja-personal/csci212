@@ -1,0 +1,13 @@
+8.6
+    1. When I step through with "n", pc sometimes increments by 8 bytes, sometimes by 4.
+    2. wye is -1 (0x ffff ffff) before line 21. I see this in r4 
+    a. The next instruction will be at 0x1048c, 52 bytes past the position of "main"
+    b. wye will be incremented by the integer I entered (3), so it should become 0x0000 0002 ( which it did)
+    c. This statement used 12 bytes, 3 32-bit instructions. If I had to guess at the assembly content it would be:
+    ldr r3, ptr @ load the address value of the pointer into a scratch register (probably as an offset from sp)
+    ldr r3, [r3] @ load the contents at that address into the scratch register
+    add r4, r4, r3 @ add r4 and r3 and store in r4
+9.4
+    1. Using "p $_exitcode" gdb prints the exit code in decimal, but in the exit report, it is in octal
+    2. The handwritten and compiled assembly versions of f are very similar (pseudo-ops notwithstanding)
+    3. Same deal with g, though in my assembly I loaded the 123 value from the data section because I didn't think it could be inlined.

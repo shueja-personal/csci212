@@ -1,6 +1,7 @@
 #include "gcd.h"
 
-int gcde(int a, int b) {
+// This is not used directly to generate the assembly code, but rather to test and layout my algorithm before manual translation.
+int gcdc(int a, int b) {
 
 	while(a != 0) {
 		if (a - b < 0) {
