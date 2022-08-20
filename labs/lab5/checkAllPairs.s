@@ -81,6 +81,7 @@ processPairs:
         pop {r1}
         ldr r0, =laysPair
         bl printf
+        // increment score
         ldr r1, [fp, -8]
         ldr r0, [r1]
         add r0, r0, 1

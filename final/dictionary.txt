@@ -1,0 +1,17 @@
+15
+apple
+banana
+tomato
+orange
+melon
+peach
+computer
+program
+editor
+homework
+dictionary
+cornbread
+doorway
+professors
+performance
+endoflist

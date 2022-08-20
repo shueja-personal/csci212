@@ -104,15 +104,18 @@ push {fp, lr}
         cmp r0, 0
         beq draw_loop
 
+        // decrement deck
         ldr r0, [r1, r3]
         sub r0, r0, 1
         str r0, [r1, r3]
 
+        //increment hand
         ldr r1, [fp, -12]
         ldr r0, [r1, r3]
         add r0, r0, 1
         str r0, [r1, r3]
 
+        // return value
         lsr r0, r3, 2
         add r0, r0, 1
 

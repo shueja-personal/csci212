@@ -5,7 +5,7 @@
 
 .data
 outp:  .asciz  "%d "
-newline: .asciz "\n"
+newline: .asciz "\n\n"
 score: .asciz " | You: %d | Computer: %d"
 
 .text
@@ -19,8 +19,8 @@ print_hud:
     add fp, sp, #4
     push {r0, r1, r2, r10} // 44 bytes
     @ r0 = address of array[0]
-    @ r1 = yourScore
-    @ r2 = computerScore
+    @ r1 = yourScore*
+    @ r2 = computerScore*
 
     @ r10 = i
     mov r10, #0
@@ -54,7 +54,9 @@ print_hud:
 
     ldr r0, =score
     ldr r1, [fp,-16]
+    ldr r1, [r1]
     ldr r2, [fp, -12]
+    ldr r2, [r2]
     bl printf
 
     ldr r0, =newline
