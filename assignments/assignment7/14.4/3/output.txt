@@ -1,0 +1,2 @@
+Enter up to 32-bit hex number: 0xffff
+The integer is: 131071

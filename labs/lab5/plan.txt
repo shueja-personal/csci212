@@ -1,0 +1,120 @@
+computer deck and player hands are 13 element arrays with card count 0-4
+Deal(deck*, hand*) {
+    int cardsDealt = 0
+    loop:
+        if cardsDealt-7 >= 0
+            bl end_loop
+        int idx = rand() % 13
+        if 0-deck[idx] >= 0
+            bl loop
+        deck[idx]--
+        hand[idx]++
+        cardsDealt++
+        bl loop
+    end_loop:
+}
+
+Give(giver*, asker*, int ask) {
+    int errorCode=0
+    loop:
+        int idx = ask
+        if 0-giver[idx] >= 0
+            errorCode = 1
+            bl end
+        giveridx]--
+        asker[idx]++
+    end:
+    return errorCode
+}
+
+int checkPairs(hand*, int ask) {
+    int errorCode = 0;
+    if (hand[ask] >=2) {
+        hand[ask] -= 2;
+        errorCode = 1;
+    }
+    return errorCode;
+}
+
+int checkAllPairs(hand*, score*) {
+    int errorCode = -1;
+    int i = 0;
+    loop:
+        if i-12 >=0
+            errorCode = 0
+            bl end
+        
+        if(checkPairs(hand, i)) {
+            &score++;
+            errorCode = i;
+            bl end;
+        }
+        i++
+        bl loop
+    end:
+        return errorCode
+}
+
+int Draw(deck*, hand*) {
+    int errorCode=-1
+    loop:
+        if(checkEmpty(deck)){
+            errorCode = -1
+            bl end
+        }
+        int idx = rand() % 13
+        if 0-deck[idx] >= 0
+            bl loop
+        deck[idx]--
+        hand[idx]++
+        errorCode = idx
+    end:
+    return errorCode
+}
+
+int checkEmpty(deck*) {
+    loop:
+        if i-12 >=0
+            errorCode = 1
+            bl end
+        int i = 0;
+        if (deck[i] != 0)
+            bl not_empty
+        i++
+        bl loop
+    is_empty:
+        return 1
+    not_empty:
+        return 0
+}
+
+printPrompt(int player) {
+    if (player == 0) {
+        printf("Computer: ")
+    }
+    else printf("You: ")
+}
+
+main{
+    int deck[13] = {4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}
+    int computer[13];
+    int player[13];
+    int computerScore = 0;
+    int playerScore = 0;
+    deal(deck, computer);
+    deal(deck, player);
+    main_loop:
+        int ask = getPlayerGuess();
+        if(give(computer, player, ask)) {
+            printPrompt(0)
+            printf("Gives you one %d", ask)
+        } else {
+            printPrompt(0)
+            printf("Sorry, go fish. \n")
+            int pickup = draw(deck, player);
+            printPrompt(1)
+            printf(")
+        }
+        
+
+}

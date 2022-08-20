@@ -1,0 +1,3 @@
+Enter up to 32-bit hex number: 30
+Enter up to 32-bit hex number: 20
+The sum is: 80
