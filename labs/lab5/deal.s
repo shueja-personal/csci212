@@ -51,7 +51,7 @@ deal:
 
     @ for (i = 0; i < r5; i++)
     @ printf("%d\n", array[i])
-
+    // draw 7 times
     deal_loop:
         ldr r10, [fp,-16]
         cmp r10, 7
@@ -85,11 +85,11 @@ push {fp, lr}
 
     draw_loop:
         ldr r0, [fp, -8]
-        bl checkEmpty
+        bl checkEmpty // if deck is empty, return 0
         cmp r0, 1
         moveq r0, 0
         bleq end_draw_loop
-
+        // gen random number
         bl rand
         mov r1, 13
         bl mod

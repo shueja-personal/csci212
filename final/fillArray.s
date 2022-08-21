@@ -17,6 +17,8 @@ fillByteArray:
     push {r4}
 
     mov r3, 0
+    // loop through r3 = 0 through size-1
+    // store value in each offset
     fill_loop:
         cmp r3, r1
         bge end_fill_loop
@@ -25,5 +27,5 @@ fillByteArray:
         b fill_loop
     end_fill_loop:
     pop {r4}
-    sub fp, sp, 4
+    sub sp, fp, 4
     pop {fp, pc}

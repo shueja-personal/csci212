@@ -8,8 +8,11 @@ int fillByteArray(char*, int, char);
 void print_status(char* guess, char* hangman, char* missed);
 int advance_hangman(char* hangman);
 int add_missed_letter(char* missed, char missedLetter);
+void get_player_guess(int* character);
+int find_replace(char* word, char* guessedWord, char search);
+int check_success(char* word, char* guessedWord);
 
-int main(void) {
+int main_c(void) {
     srand(time(0));
 
     char word[15];
@@ -30,65 +33,23 @@ int main(void) {
     fillByteArray(hangman, 7, '-');
     hangman[7] = '\0';
     
-    printf("%s\n", word);
+    printf("\n", word);
     print_status(guessedWord, hangman, missed);
 
     while (1) {
         int character = '\0';
         //get_player_guess
-        while (1) {
-            printf("Enter a character: ");
-
-            scanf("%c", &character);
-            if(character == '\n') {scanf("%c", &character);}
-            if (!islower(character)) {continue;}
-            
-            else {break;}
-            //  return character;
-        }
-        //
-
-        // findReplace(word, character)
-        // 0 if found, 1 if not found
-        int scan_idx = 0;
-        int flag = 1;
-        while(1) {
-            if (word[scan_idx] == '\0') {
-                break;
-            }
-            if(word[scan_idx] == character) {
-                guessedWord[scan_idx] = character;
-                flag = 0;
-
-            }
-            scan_idx++;
-        }
-        // end search
-        if(flag) {
+        get_player_guess(&character);
+        if(find_replace(word, guessedWord, character)) {
             printf(">>>BZZ! Wrong<<<\n");
             if(advance_hangman(hangman) == 0) {
                 printf("You Lose! it was %s", word);
-            break;}
-            add_missed_letter(missed, character);
-        }
-        else {
-           
-        }
-        // checkSuccess
-        int check_idx = 0;
-        int check_flag = 1;
-        while(1) {
-            if(word[check_idx] == '\0') { break;}
-            if (word[check_idx] != guessedWord[check_idx] ) {
-                check_flag = 0;
                 break;
             }
-            check_idx++;
-            //return check_flag
+            add_missed_letter(missed, character);
         }
-
         print_status(guessedWord, hangman, missed);
-        if(check_flag) {
+        if(check_success(word, guessedWord)) {
             printf("You Win!\n");
             break;
         }

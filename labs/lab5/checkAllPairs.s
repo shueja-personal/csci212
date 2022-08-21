@@ -3,7 +3,7 @@
 .fpu neon-fp-armv8
 .syntax unified
 .data
-    out: .asciz "Checkin...g %d\n"
+    out: .asciz "Checking %d\n"
     laysPair: .asciz "Lays down a pair of %ds.\n"
 .text
 .align 2
@@ -70,6 +70,7 @@ processPairs:
     add fp, sp, 4
     push {r0, r1, r2} // score (-8), player (-12), hand(-16)
     process_loop:
+        // check all pairs and print messages for the ones found
         ldr r0, [fp, -16]
         bl checkAllPairs
         cmp r0, 0

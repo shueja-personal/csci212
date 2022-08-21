@@ -25,15 +25,12 @@ checkEmpty:
 
     checkEmpty_loop:
         cmp r10, 13
-        movge r5, 1 // if we got to the end, return 1
+        movge r5, 1 // if we got to the end, return 1 (the deck is empty)
         bge end_checkEmpty_loop
         mov r3, r10, LSL #2
-        @ if (0-deck[idx] >= 0) {
-        @    continue;
-        @}
         ldr r0, [r4, r3]
         cmp r0, 0
-        movne r5, 0
+        movne r5, 0 // if we find an element that's not 0, return 0
         bne end_checkEmpty_loop
 
         add r10, r10, #1

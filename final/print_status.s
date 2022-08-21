@@ -9,6 +9,7 @@ out: .asciz "%s\n\n%s\n\nMissing letters: %s\n\n"
 .type print_status, %function
 
 print_status:
+    // print guess word, hangman, and missing letters
     push {fp, lr}
     add fp, sp, 4
     push {r0, r1, r2}

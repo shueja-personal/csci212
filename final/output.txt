@@ -1,0 +1,93 @@
+-----
+
+-------
+
+Missing letters: -------
+
+Enter a character: a
+
+a----
+
+-------
+
+Missing letters: -------
+
+Enter a character: b
+
+>>>BZZ! Wrong<<<
+a----
+
+H------
+
+Missing letters: b------
+
+Enter a character: h
+
+>>>BZZ! Wrong<<<
+a----
+
+HA-----
+
+Missing letters: bh-----
+
+Enter a character: j
+
+>>>BZZ! Wrong<<<
+a----
+
+HAN----
+
+Missing letters: bhj----
+
+Enter a character: l
+
+a--l-
+
+HAN----
+
+Missing letters: bhj----
+
+Enter a character: e
+
+a--le
+
+HAN----
+
+Missing letters: bhj----
+
+Enter a character: m
+
+>>>BZZ! Wrong<<<
+a--le
+
+HANG---
+
+Missing letters: bhjm---
+
+Enter a character: n
+
+>>>BZZ! Wrong<<<
+a--le
+
+HANGM--
+
+Missing letters: bhjmn--
+
+Enter a character: k
+
+>>>BZZ! Wrong<<<
+a--le
+
+HANGMA-
+
+Missing letters: bhjmnk-
+
+Enter a character: p
+
+apple
+
+HANGMA-
+
+Missing letters: bhjmnk-
+
+You Win!

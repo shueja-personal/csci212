@@ -15,17 +15,20 @@ advance_hangman:
     @ r0 - array of missed letters
     @ r1 - character to add
     loop:
-
+        // if we hit the end, set return to 0 and end
+        // IMPORTANT: this return of 0 signifies that the hangman is complete,
+        //and this current wrong guess means you lose
         cmp r3, 7
         movge r0, 0
         bge end
+        // load the char from the hangman array
         ldrsb r2, [r0, r3]
-
+        // if null, end
         cmp r2, '\0
         moveq r0, 1
         beq end
 
-
+        // if a dash, fill with the corresponding index in 'HANGMAN'
         cmp r2, '-
         ldreq r2, =hangman
         ldrbeq r1, [r2, r3]

@@ -12,7 +12,6 @@
     youWinStr: .asciz "You Win!\n"
     tieGameStr: .asciz "Tied Game!\n"
     computerWinsStr: .asciz "Computer Wins :(\n"
-    out: .asciz "arr: %p fp: %p sp:%p \n"
 .text
 .equ COMPUTER_SCORE_PTR, -8
 .equ PLAYER_SCORE_PTR, -12
@@ -37,17 +36,11 @@ main:
 
     sub sp, sp, 52*3 //156, sp = fp-168
 
-    // init deck
+    // init deck and hands
     add r0, fp, DECK
     mov r1, 13
     mov r2, 4
     bl fillArray
-
-    mov r3, sp
-    mov r2, fp
-    add r1, fp, DECK
-    ldr r0, =out
-    bl printf
 
     add r0, fp, COMPUTER_HAND
     mov r1, 13
@@ -59,7 +52,7 @@ main:
     mov r2, 0
     bl fillArray
 
-
+    // deal both
     add r0, fp, DECK
     add r1, fp, PLAYER_HAND
     bl deal
@@ -68,6 +61,7 @@ main:
     add r1, fp, COMPUTER_HAND
     bl deal
 
+    // process pairs from the deal
     add r0, fp, PLAYER_HAND
     mov r1, 1
     add r2, fp, PLAYER_SCORE_PTR
@@ -85,14 +79,19 @@ main:
     
     main_loop:
         playerTurn:
+        add r0, fp, PLAYER_HAND
+        bl checkEmpty
+        cmp r0, 1
+        bleq playerDrawsCard
+        // get guess
         bl get_player_guess
         push {r0}
-
+        // request card
         add r0, fp, COMPUTER_HAND
         add r1, fp, PLAYER_HAND
         ldr r2, [sp]
         bl give
-        cmp r0, 0
+        cmp r0, 0 // if give did not happen go to playerGoFish
         bleq playerGoFish
         playerGetsCard:
             mov r0, 0
@@ -106,9 +105,12 @@ main:
             bl print_prompt
             ldr r0, =goFishStr
             bl printf
+            playerDrawsCard:
+            // draw a card
             add r0, fp, DECK
             add r1, fp, PLAYER_HAND
             bl draw
+            // if draw failed, go to empty deck message
             cmp r0, 0
             bleq playerEmptyDeck
             blne playerDraw
@@ -117,6 +119,7 @@ main:
                 bl printf
                 bl endPlayerTurn
             playerDraw:
+            
                 push {r0}
                 mov r0, 1
                 bl print_prompt
@@ -124,6 +127,7 @@ main:
                 ldr r0, =youPickedUpStr
                 bl printf
         endPlayerTurn:
+            // process pairs from the player
             add r0, fp, PLAYER_HAND
             mov r1, 1
             add r2, fp, PLAYER_SCORE_PTR
@@ -136,23 +140,23 @@ main:
 
             pop {r0}
         computerTurn:
-        bl rand
-        mov r1, 13
-        bl mod
+        // guess a random number
+        add r0, fp, COMPUTER_HAND
+        bl pick_random
         
-        add r1, r1, 1
-        // pick random number
+        add r0, r0, 1
         push {r0}
         mov r0, 0
         bl print_prompt
         ldr r1, [sp]
         ldr r0, =computerAsksYouStr
         bl printf
-
+        // request from player
         add r0, fp, PLAYER_HAND
         add r1, fp, COMPUTER_HAND
         ldr r2, [sp]
         bl give
+        // if request failed, go fish
         cmp r0, 0
         bleq computerGoFish
         computerGetsCard:
@@ -195,6 +199,7 @@ main:
             add r2, fp, COMPUTER_SCORE_PTR
             bl print_hud  
 
+            // if combined scores show 26 pairs, end the loop
             ldr r1, [fp, PLAYER_SCORE_PTR]
             ldr r2, [fp, COMPUTER_SCORE_PTR]
             add r1, r1, r2
@@ -203,7 +208,7 @@ main:
 
     b main_loop
     end_main_loop:
-
+        // compare scores and print outcome
         ldr r1, [fp, PLAYER_SCORE_PTR]
         ldr r2, [fp, COMPUTER_SCORE_PTR]
         cmp r1, r2

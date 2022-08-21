@@ -35,6 +35,7 @@ get_player_guess:
     bl scanf
     ldr r0, [fp, -8]
 
+    // if input is outside 1-13, clear input and re-prompt
     cmp r0, 0
     ble clear
     cmp r0, 14
