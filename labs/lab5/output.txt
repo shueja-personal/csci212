@@ -1,0 +1,272 @@
+Player: Lays down a pair of 1s.
+Player: Lays down a pair of 13s.
+Computer: Lays down a pair of 13s.
+7 8 12  | You: 2 | Computer: 1
+
+Ask the computer for: 7
+Computer: Gives you one 7
+Player: Lays down a pair of 7s.
+8 12  | You: 3 | Computer: 1
+
+Computer: Do you have a 2?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+Computer: Lays down a pair of 2s.
+8 12  | You: 3 | Computer: 2
+
+Ask the computer for: 8
+Computer: Gives you one 8
+Player: Lays down a pair of 8s.
+12  | You: 4 | Computer: 2
+
+Computer: Do you have a 6?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+12  | You: 4 | Computer: 2
+
+Ask the computer for: 12
+Computer: Sorry, go fish.
+Player: Picked up a 7. 
+7 12  | You: 4 | Computer: 2
+
+Computer: Do you have a 5?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+7 12  | You: 4 | Computer: 2
+
+Ask the computer for: 7
+Computer: Sorry, go fish.
+Player: Picked up a 6. 
+6 7 12  | You: 4 | Computer: 2
+
+Computer: Do you have a 6?
+Player: Gives the computer one 6
+Computer: Lays down a pair of 6s.
+7 12  | You: 4 | Computer: 3
+
+Ask the computer for: 7
+Computer: Sorry, go fish.
+Player: Picked up a 11. 
+7 11 12  | You: 4 | Computer: 3
+
+Computer: Do you have a 5?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+Computer: Lays down a pair of 11s.
+7 11 12  | You: 4 | Computer: 4
+
+Ask the computer for: 11
+Computer: Sorry, go fish.
+Player: Picked up a 3. 
+3 7 11 12  | You: 4 | Computer: 4
+
+Computer: Do you have a 5?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+3 7 11 12  | You: 4 | Computer: 4
+
+Ask the computer for: 3
+Computer: Gives you one 3
+Player: Lays down a pair of 3s.
+7 11 12  | You: 5 | Computer: 4
+
+Computer: Do you have a 5?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+7 11 12  | You: 5 | Computer: 4
+
+Ask the computer for: 7
+Computer: Gives you one 7
+Player: Lays down a pair of 7s.
+11 12  | You: 6 | Computer: 4
+
+Computer: Do you have a 5?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+11 12  | You: 6 | Computer: 4
+
+Ask the computer for: 11
+Computer: Sorry, go fish.
+Player: Picked up a 3. 
+3 11 12  | You: 6 | Computer: 4
+
+Computer: Do you have a 8?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+3 11 12  | You: 6 | Computer: 4
+
+Ask the computer for: 3
+Computer: Sorry, go fish.
+Player: Picked up a 1. 
+1 3 11 12  | You: 6 | Computer: 4
+
+Computer: Do you have a 10?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+1 3 11 12  | You: 6 | Computer: 4
+
+Ask the computer for: 1
+Computer: Sorry, go fish.
+Player: Picked up a 10. 
+1 3 10 11 12  | You: 6 | Computer: 4
+
+Computer: Do you have a 5?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+Computer: Lays down a pair of 9s.
+1 3 10 11 12  | You: 6 | Computer: 5
+
+Ask the computer for: 1
+Computer: Sorry, go fish.
+Player: Picked up a 9. 
+1 3 9 10 11 12  | You: 6 | Computer: 5
+
+Computer: Do you have a 2?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+Computer: Lays down a pair of 2s.
+1 3 9 10 11 12  | You: 6 | Computer: 6
+
+Ask the computer for: 1
+Computer: Sorry, go fish.
+Player: Picked up a 1. 
+Player: Lays down a pair of 1s.
+3 9 10 11 12  | You: 7 | Computer: 6
+
+Computer: Do you have a 8?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+3 9 10 11 12  | You: 7 | Computer: 6
+
+Ask the computer for: 3
+Computer: Gives you one 3
+Player: Lays down a pair of 3s.
+9 10 11 12  | You: 8 | Computer: 6
+
+Computer: Do you have a 5?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+9 10 11 12  | You: 8 | Computer: 6
+
+Ask the computer for: 9
+Computer: Gives you one 9
+Player: Lays down a pair of 9s.
+10 11 12  | You: 9 | Computer: 6
+
+Computer: Do you have a 10?
+Player: Gives the computer one 10
+Computer: Lays down a pair of 10s.
+11 12  | You: 9 | Computer: 7
+
+Ask the computer for: 11
+Computer: Sorry, go fish.
+Player: Picked up a 4. 
+4 11 12  | You: 9 | Computer: 7
+
+Computer: Do you have a 8?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+4 11 12  | You: 9 | Computer: 7
+
+Ask the computer for: 4
+Computer: Sorry, go fish.
+Player: Picked up a 5. 
+4 5 11 12  | You: 9 | Computer: 7
+
+Computer: Do you have a 5?
+Player: Gives the computer one 5
+Computer: Lays down a pair of 5s.
+4 11 12  | You: 9 | Computer: 8
+
+Ask the computer for: 11
+Computer: Sorry, go fish.
+Player: Picked up a 6. 
+4 6 11 12  | You: 9 | Computer: 8
+
+Computer: Do you have a 10?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+Computer: Lays down a pair of 10s.
+4 6 11 12  | You: 9 | Computer: 9
+
+Ask the computer for: 4
+Computer: Sorry, go fish.
+Player: Picked up a 4. 
+Player: Lays down a pair of 4s.
+6 11 12  | You: 10 | Computer: 9
+
+Computer: Do you have a 8?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+6 11 12  | You: 10 | Computer: 9
+
+Ask the computer for: 6
+Computer: Sorry, go fish.
+Player: Picked up a 12. 
+Player: Lays down a pair of 12s.
+6 11  | You: 11 | Computer: 9
+
+Computer: Do you have a 8?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+6 11  | You: 11 | Computer: 9
+
+Ask the computer for: 6
+Computer: Sorry, go fish.
+Player: Picked up a 12. 
+6 11 12  | You: 11 | Computer: 9
+
+Computer: Do you have a 8?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+6 11 12  | You: 11 | Computer: 9
+
+Ask the computer for: 6
+Computer: Gives you one 6
+Player: Lays down a pair of 6s.
+11 12  | You: 12 | Computer: 9
+
+Computer: Do you have a 5?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+11 12  | You: 12 | Computer: 9
+
+Ask the computer for: 11
+Computer: Gives you one 11
+Player: Lays down a pair of 11s.
+12  | You: 13 | Computer: 9
+
+Computer: Do you have a 8?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+12  | You: 13 | Computer: 9
+
+Ask the computer for: 12
+Computer: Gives you one 12
+Player: Lays down a pair of 12s.
+ | You: 14 | Computer: 9
+
+Computer: Do you have a 4?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+Computer: Lays down a pair of 8s.
+ | You: 14 | Computer: 10
+
+Player: Picked up a 4. 
+4  | You: 14 | Computer: 10
+
+Computer: Do you have a 5?
+Player: Sorry, go fish.
+Computer: Picked up a card.
+Computer: Lays down a pair of 5s.
+4  | You: 14 | Computer: 11
+
+Ask the computer for: 4
+Computer: Gives you one 4
+Player: Lays down a pair of 4s.
+ | You: 15 | Computer: 11
+
+Deck is empty!
+ | You: 15 | Computer: 11
+
+You Win!
