@@ -84,8 +84,16 @@ main:
         cmp r0, 1
         bleq playerDrawsCard
         // get guess
+        playerGuess:
         bl get_player_guess
+        
         push {r0}
+        mov r1, r0
+        add r0, fp, PLAYER_HAND
+        sub r1, r1, 1
+        bl get
+        cmp r0, 0
+        bleq playerGuess
         // request card
         add r0, fp, COMPUTER_HAND
         add r1, fp, PLAYER_HAND
@@ -140,6 +148,10 @@ main:
 
             pop {r0}
         computerTurn:
+        add r0, fp, COMPUTER_HAND
+        bl checkEmpty
+        cmp r0, 1
+        bleq  computerDrawsCard
         // guess a random number
         add r0, fp, COMPUTER_HAND
         bl pick_random
@@ -171,6 +183,7 @@ main:
             bl print_prompt
             ldr r0, =goFishStr
             bl printf
+            computerDrawsCard:
             add r0, fp, DECK
             add r1, fp, COMPUTER_HAND
             bl draw

@@ -18,12 +18,13 @@ pick_random:
         // gen random number
         
         mov r0, 13
-        bl random
+        bl random_number
         // r0 has idx
         push {r0}
         ldr r0, [fp, -8]
-        bl get
         pop {r1}
+        bl get
+
         cmp r0, 0
         beq draw_loop
     end_draw_loop:

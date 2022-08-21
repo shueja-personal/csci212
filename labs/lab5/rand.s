@@ -4,9 +4,9 @@
 
 .text
 .align 2
-.global random
-.type random, %function
-random: 
+.global random_number
+.type random_number, %function
+random_number: 
     push {fp, lr}
     add fp, sp, 4
     push {r0}
